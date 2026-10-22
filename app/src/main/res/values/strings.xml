@@ -1,5 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MasjidConnect</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Navigasi -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_keuangan">Keuangan</string>
+    <string name="nav_agenda">Agenda</string>
+    <string name="nav_setting">Setting</string>
+
+    <!-- Header & Profil -->
+    <string name="title_setting">Pengaturan</string>
+    <string name="title_digital_signage">Digital Signage / TV</string>
+    <string name="default_user_name">Zaidan Ahmad</string>
+    <string name="default_user_role">ADMINISTRATOR • MASJID AL-IKHLAS</string>
+
+    <!-- Menu Pengaturan -->
+    <string name="menu_profil_masjid">Profil Masjid</string>
+    <string name="menu_pengaturan_notifikasi">Pengaturan Notifikasi</string>
+    <string name="menu_konfigurasi_jadwal_salat">Konfigurasi Jadwal Salat</string>
+    <string name="menu_manajemen_user">Manajemen User</string>
+    <string name="menu_keamanan_password">Keamanan &amp; Password</string>
+    <string name="menu_digital_signage">Digital Signage / TV</string>
+    <string name="menu_tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="btn_keluar_akun">Keluar Akun</string>
+    <string name="copyright_text">© 2024 Karya Digital Muslim</string>
+
+    <!-- Digital Signage / TV -->
+    <string name="label_device_status">DEVICE STATUS</string>
+    <string name="status_connected">Connected / Sync OK</string>
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_syncing">Syncing&#8230;</string>
+    <string name="btn_refresh">Refresh</string>
+    <string name="btn_preview">Preview</string>
+
+    <!-- Live Preview -->
+    <string name="default_mosque_chip">Al-Ikhlas</string>
+    <string name="default_ticker_verse">\"Sesungguhnya sholat itu mencegah dari perbuatan keji dan munkar.\" (QS. AL-ANKABUT: 45)</string>
+
+    <!-- Segmented Tabs -->
+    <string name="tab_media">Media</string>
+    <string name="tab_ticker">Ticker</string>
+    <string name="tab_timing">Timing</string>
+
+    <!-- Playlist -->
+    <string name="title_active_playlist">Active Playlist</string>
+    <string name="items_count_format">(%1$d Items)</string>
+    <string name="btn_reorder">Reorder</string>
+    <string name="btn_done">Selesai</string>
+    <string name="badge_full_video">FULL VIDEO</string>
+
+    <!-- Storage Usage -->
+    <string name="title_storage_usage">Storage Usage</string>
+    <string name="storage_usage_format">%1$.1f GB / %2$.1f GB</string>
+
+    <!-- Upload Box -->
+    <string name="title_upload_new_media">Upload New Media</string>
+    <string name="sub_upload_new_media">Support JPG, PNG, MP4. Max 50MB</string>
+
+    <!-- Dialog & Actions -->
+    <string name="dialog_logout_title">Keluar Akun</string>
+    <string name="dialog_logout_message">Apakah Anda yakin ingin keluar dari akun Administrator?</string>
+    <string name="btn_cancel">Batal</string>
+    <string name="btn_yes_logout">Ya, Keluar</string>
+    <string name="btn_save">Simpan</string>
+    <string name="btn_delete">Hapus</string>
+    <string name="btn_edit">Ubah</string>
+    <string name="dialog_delete_media_title">Hapus Media</string>
+    <string name="dialog_delete_media_msg">Apakah Anda yakin ingin menghapus media ini dari playlist?</string>
+
+    <!-- Errors & Messages -->
+    <string name="msg_refresh_success">Koneksi dan sinkronisasi perangkat diperbarui.</string>
+    <string name="msg_reorder_enabled">Mode urut ulang aktif. Seret item untuk mengubah urutan.</string>
+    <string name="msg_reorder_disabled">Urutan playlist berhasil disimpan.</string>
+    <string name="msg_upload_success">Media berhasil diunggah ke playlist!</string>
+    <string name="error_file_too_large">Ukuran file melebihi batas maksimal 50MB!</string>
+    <string name="error_invalid_file_type">Format file tidak didukung! Gunakan JPG, PNG, atau MP4.</string>
+    <string name="error_storage_full">Penyimpanan penuh! Hapus beberapa media untuk mengunggah file baru.</string>
+    <string name="empty_playlist_title">Playlist Kosong</string>
+    <string name="empty_playlist_sub">Belum ada media yang ditambahkan. Unggah gambar atau video untuk ditampilkan di layar TV.</string>
+    <string name="btn_try_again">Coba Lagi</string>
 </resources>

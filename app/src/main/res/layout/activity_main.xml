@@ -3,20 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_slate">
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation" />
+        android:layout_height="match_parent" />
 
+    <!-- Bottom Navigation Melayang (Floating) Hijau Gelap #062C20 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:layout_alignParentBottom="true"
-        android:background="?android:attr/windowBackground"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_floating_bottom_nav"
+        android:elevation="8dp"
+        app:itemIconSize="22dp"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemRippleColor="@color/amber_translucent_20"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:itemActiveIndicatorStyle="@style/CustomBottomNavActiveIndicator"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />
 
 </RelativeLayout>

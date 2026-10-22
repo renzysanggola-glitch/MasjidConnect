@@ -3,47 +3,83 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA"
+    android:background="@color/bg_slate"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="90dp">
+        android:paddingBottom="96dp">
 
-        <!-- Header Hijau dengan Profil Administrator -->
+        <!-- Global Header Hijau Gelap #062C20 Melengkung -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#0F4C3A"
+            android:background="@drawable/bg_curved_header"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:paddingHorizontal="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="28dp">
 
+            <!-- Baris Top: Back Button, Title, Avatar -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_back_button"
+                    android:contentDescription="Kembali"
+                    android:src="@drawable/ic_arrow_back"
+                    app:tint="@color/white" />
 
                 <TextView
                     android:id="@+id/tv_title_setting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Pengaturan"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
+                    android:layout_marginStart="14dp"
+                    android:layout_toEndOf="@id/btn_back"
+                    android:text="@string/title_setting"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <!-- Avatar user bulat dengan border amber dan titik merah notifikasi -->
+                <RelativeLayout
+                    android:id="@+id/container_avatar_top"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:src="@android:drawable/ic_menu_myplaces"
-                    app:tint="#FFFFFF" />
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:id="@+id/iv_top_avatar"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_avatar_amber_border"
+                        android:clipToOutline="true"
+                        android:padding="2dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_people"
+                        app:tint="@color/primary_dark_green" />
+
+                    <!-- Red notification dot at top right -->
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/bg_notification_dot" />
+                </RelativeLayout>
             </RelativeLayout>
 
-            <!-- Card Identitas User -->
+            <!-- Blok Identitas User / Admin -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,26 +88,28 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/iv_user_avatar"
+                    android:id="@+id/iv_user_photo"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="#FFB300"
-                    android:padding="4dp"
-                    android:src="@android:drawable/ic_menu_myplaces"
-                    app:tint="#0F4C3A" />
+                    android:background="@drawable/bg_avatar_amber_border"
+                    android:padding="3dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_people"
+                    app:tint="@color/primary_dark_green" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tv_user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Zaidan Ahmad"
-                        android:textColor="#FFFFFF"
+                        android:text="@string/default_user_name"
+                        android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -79,23 +117,24 @@
                         android:id="@+id/tv_user_role"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="ADMINISTRATOR • MASJID AL-IKHLAS"
-                        android:textColor="#FFB300"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/default_user_role"
+                        android:textColor="@color/amber_accent"
                         android:textSize="11sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-        <!-- List Menu Pengaturan -->
+        <!-- Daftar Menu Kartu Putih Terpisah -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp">
 
-            <!-- Item: Profil Masjid -->
+            <!-- 1. Profil Masjid (Highlight style: Mint container) -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_profil_masjid"
                 android:layout_width="match_parent"
@@ -104,45 +143,52 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp">
+                    android:padding="14dp">
 
-                    <ImageView
-                        android:id="@+id/icon_profil_masjid"
+                    <FrameLayout
+                        android:id="@+id/container_icon_profil"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="#E8F5E9"
-                        android:padding="8dp"
-                        android:src="@android:drawable/ic_menu_compass"
-                        app:tint="#0F4C3A" />
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_icon_mint">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_mosque"
+                            app:tint="@color/emerald_primary" />
+                    </FrameLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_toEndOf="@id/icon_profil_masjid"
-                        android:text="Profil Masjid"
-                        android:textColor="#212121"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@id/container_icon_profil"
+                        android:text="@string/menu_profil_masjid"
+                        android:textColor="@color/text_dark_gray"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@android:drawable/ic_media_next"
-                        app:tint="#BDBDBD" />
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/text_muted" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Item: Pengaturan Notifikasi -->
+            <!-- 2. Pengaturan Notifikasi -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_notifikasi"
                 android:layout_width="match_parent"
@@ -151,45 +197,52 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp">
+                    android:padding="14dp">
 
-                    <ImageView
-                        android:id="@+id/icon_notifikasi"
+                    <FrameLayout
+                        android:id="@+id/container_icon_notif"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="#F5F5F5"
-                        android:padding="8dp"
-                        android:src="@android:drawable/ic_popup_reminder"
-                        app:tint="#424242" />
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_icon_gray">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_bell"
+                            app:tint="@color/text_secondary" />
+                    </FrameLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_toEndOf="@id/icon_notifikasi"
-                        android:text="Pengaturan Notifikasi"
-                        android:textColor="#212121"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@id/container_icon_notif"
+                        android:text="@string/menu_pengaturan_notifikasi"
+                        android:textColor="@color/text_dark_gray"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@android:drawable/ic_media_next"
-                        app:tint="#BDBDBD" />
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/text_muted" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Item: Konfigurasi Jadwal Salat -->
+            <!-- 3. Konfigurasi Jadwal Salat -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_jadwal_salat"
                 android:layout_width="match_parent"
@@ -198,45 +251,52 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp">
+                    android:padding="14dp">
 
-                    <ImageView
-                        android:id="@+id/icon_jadwal"
+                    <FrameLayout
+                        android:id="@+id/container_icon_jadwal"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="#F5F5F5"
-                        android:padding="8dp"
-                        android:src="@android:drawable/ic_menu_day"
-                        app:tint="#424242" />
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_icon_gray">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_sparkle"
+                            app:tint="@color/text_secondary" />
+                    </FrameLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_toEndOf="@id/icon_jadwal"
-                        android:text="Konfigurasi Jadwal Salat"
-                        android:textColor="#212121"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@id/container_icon_jadwal"
+                        android:text="@string/menu_konfigurasi_jadwal_salat"
+                        android:textColor="@color/text_dark_gray"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@android:drawable/ic_media_next"
-                        app:tint="#BDBDBD" />
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/text_muted" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Item: Manajemen User -->
+            <!-- 4. Manajemen User (Admin Only) -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_manajemen_user"
                 android:layout_width="match_parent"
@@ -245,45 +305,52 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp">
+                    android:padding="14dp">
 
-                    <ImageView
-                        android:id="@+id/icon_user"
+                    <FrameLayout
+                        android:id="@+id/container_icon_user"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="#F5F5F5"
-                        android:padding="8dp"
-                        android:src="@android:drawable/ic_menu_myplaces"
-                        app:tint="#424242" />
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_icon_gray">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_people"
+                            app:tint="@color/text_secondary" />
+                    </FrameLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_toEndOf="@id/icon_user"
-                        android:text="Manajemen User"
-                        android:textColor="#212121"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@id/container_icon_user"
+                        android:text="@string/menu_manajemen_user"
+                        android:textColor="@color/text_dark_gray"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@android:drawable/ic_media_next"
-                        app:tint="#BDBDBD" />
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/text_muted" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Item: Keamanan & Password -->
+            <!-- 5. Keamanan & Password (Admin Only) -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_keamanan"
                 android:layout_width="match_parent"
@@ -292,45 +359,106 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp">
+                    android:padding="14dp">
 
-                    <ImageView
-                        android:id="@+id/icon_keamanan"
+                    <FrameLayout
+                        android:id="@+id/container_icon_keamanan"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="#F5F5F5"
-                        android:padding="8dp"
-                        android:src="@android:drawable/ic_lock_lock"
-                        app:tint="#424242" />
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_icon_gray">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_shield"
+                            app:tint="@color/text_secondary" />
+                    </FrameLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_toEndOf="@id/icon_keamanan"
-                        android:text="Keamanan &amp; Password"
-                        android:textColor="#212121"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@id/container_icon_keamanan"
+                        android:text="@string/menu_keamanan_password"
+                        android:textColor="@color/text_dark_gray"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@android:drawable/ic_media_next"
-                        app:tint="#BDBDBD" />
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/text_muted" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Item: Tentang Aplikasi -->
+            <!-- 6. Digital Signage / TV (Admin Only, Ikon TV/Monitor) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_digital_signage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="14dp">
+
+                    <FrameLayout
+                        android:id="@+id/container_icon_tv"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_icon_gray">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_tv"
+                            app:tint="@color/text_secondary" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@id/container_icon_tv"
+                        android:text="@string/menu_digital_signage"
+                        android:textColor="@color/text_dark_gray"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/text_muted" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 7. Tentang Aplikasi -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_tentang"
                 android:layout_width="match_parent"
@@ -339,61 +467,80 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp">
+                    android:padding="14dp">
 
-                    <ImageView
-                        android:id="@+id/icon_tentang"
+                    <FrameLayout
+                        android:id="@+id/container_icon_tentang"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="#F5F5F5"
-                        android:padding="8dp"
-                        android:src="@android:drawable/ic_menu_info_details"
-                        app:tint="#424242" />
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_icon_gray">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_info"
+                            app:tint="@color/text_secondary" />
+                    </FrameLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_toEndOf="@id/icon_tentang"
-                        android:text="Tentang Aplikasi"
-                        android:textColor="#212121"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@id/container_icon_tentang"
+                        android:text="@string/menu_tentang_aplikasi"
+                        android:textColor="@color/text_dark_gray"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@android:drawable/ic_media_next"
-                        app:tint="#BDBDBD" />
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/text_muted" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Tombol Keluar Akun (Logout) -->
-            <Button
+            <!-- Tombol Keluar Akun -->
+            <LinearLayout
                 android:id="@+id/btn_keluar_akun"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:backgroundTint="#FFEBEE"
-                android:drawableStart="@android:drawable/ic_lock_power_off"
-                android:drawableTint="#D32F2F"
-                android:paddingHorizontal="20dp"
-                android:text="Keluar Akun"
-                android:textAllCaps="false"
-                android:textColor="#D32F2F"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:cornerRadius="16dp" />
+                android:background="@drawable/bg_btn_logout_danger"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <!-- Footer Versi Aplikasi -->
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_logout"
+                    app:tint="@color/danger_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/btn_keluar_akun"
+                    android:textColor="@color/danger_red"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Footer Teks Aplikasi -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -402,18 +549,19 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_app_version"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Masjid Connect v2.4.0"
-                    android:textColor="#9E9E9E"
+                    android:textColor="@color/text_muted"
                     android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:text="© 2026 Karya Digital Muslim"
-                    android:textColor="#BDBDBD"
+                    android:text="@string/copyright_text"
+                    android:textColor="@color/text_muted"
                     android:textSize="11sp" />
             </LinearLayout>
 

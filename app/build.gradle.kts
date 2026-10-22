@@ -29,6 +29,9 @@ android {
             )
         }
     }
+    buildFeatures {
+        buildConfig = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -44,6 +47,10 @@ dependencies {
     // Library Tambahan untuk API & JSON Parsing
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.google.code.gson:gson:2.10.1")
+
+    // Glide untuk memuat gambar & thumbnail video
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

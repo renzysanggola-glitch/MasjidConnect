@@ -1,9 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MasjidConnect" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Brand Colors -->
+        <item name="colorPrimary">@color/primary_dark_green</item>
+        <item name="colorSecondary">@color/amber_accent</item>
+        <item name="colorTertiary">@color/emerald_primary</item>
+        <item name="android:statusBarColor">@color/primary_dark_green</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@color/bg_slate</item>
     </style>
 
     <style name="Theme.MasjidConnect" parent="Base.Theme.MasjidConnect" />
+
+    <!-- Style indikator aktif Bottom Navigation -->
+    <style name="CustomBottomNavActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/amber_translucent_20</item>
+        <item name="cornerSize">12dp</item>
+    </style>
 </resources>

@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_dashboard"
-        android:icon="@android:drawable/ic_menu_today"
-        android:title="Dashboard" />
+        android:icon="@drawable/ic_dashboard_pie"
+        android:title="@string/nav_dashboard" />
     <item
         android:id="@+id/nav_keuangan"
-        android:icon="@android:drawable/ic_menu_agenda"
-        android:title="Keuangan" />
+        android:icon="@drawable/ic_keuangan_wallet"
+        android:title="@string/nav_keuangan" />
     <item
         android:id="@+id/nav_agenda"
-        android:icon="@android:drawable/ic_menu_my_calendar"
-        android:title="Agenda" />
+        android:icon="@drawable/ic_agenda_calendar"
+        android:title="@string/nav_agenda" />
     <item
         android:id="@+id/nav_setting"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Setting" />
+        android:icon="@drawable/ic_setting_gear"
+        android:title="@string/nav_setting" />
 </menu>

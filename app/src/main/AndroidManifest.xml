@@ -38,6 +38,11 @@
             android:name=".ProfilMasjidActivity"
             android:exported="false" />
 
+        <!-- Activity Digital Signage / TV -->
+        <activity
+            android:name=".DigitalSignageActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

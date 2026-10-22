@@ -2,4 +2,35 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Design System Colors -->
+    <color name="primary_dark_green">#062C20</color>
+    <color name="primary_dark_green_light">#0D3E2F</color>
+    <color name="emerald_primary">#10B981</color>
+    <color name="emerald_mint_bg">#ECFDF5</color>
+    <color name="amber_accent">#F59E0B</color>
+    <color name="amber_light_bg">#FEF3C7</color>
+    <color name="amber_translucent_20">#33F59E0B</color>
+
+    <color name="bg_slate">#F8FAFC</color>
+    <color name="surface_white">#FFFFFF</color>
+    <color name="navy_dark">#111827</color>
+
+    <color name="text_primary">#0F2A22</color>
+    <color name="text_dark_gray">#1F2937</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
+
+    <color name="danger_red">#EF4444</color>
+    <color name="danger_bg">#FEF2F2</color>
+    <color name="danger_border">#FECACA</color>
+
+    <color name="border_gray">#E2E8F0</color>
+    <color name="border_dashed">#CBD5E1</color>
+    <color name="tab_bg_gray">#F1F5F9</color>
+
+    <color name="white_translucent_20">#33FFFFFF</color>
+    <color name="white_translucent_80">#CCFFFFFF</color>
+    <color name="overlay_black_50">#80000000</color>
+    <color name="overlay_black_70">#B3000000</color>
 </resources>

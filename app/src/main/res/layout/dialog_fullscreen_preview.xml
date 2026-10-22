@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navy_dark">
+
+    <ImageView
+        android:id="@+id/iv_fullscreen_slide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_mosque"
+        app:tint="@color/primary_dark_green_light" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_gradient_preview_bottom" />
+
+    <!-- Top Left Chip: Nama Masjid -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_chip_dark_translucent"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_mosque"
+            app:tint="@color/emerald_primary" />
+
+        <TextView
+            android:id="@+id/tv_preview_masjid_fs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/default_mosque_chip"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Top Right Chip & Close button -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_chip_dark_translucent"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tv_preview_clock_fs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15:42:18"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_close_preview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_chip_dark_translucent"
+            android:contentDescription="Tutup"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <!-- Bottom Overlay: Ticker Text -->
+    <TextView
+        android:id="@+id/tv_preview_ticker_fs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="20dp"
+        android:text="@string/default_ticker_verse"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
