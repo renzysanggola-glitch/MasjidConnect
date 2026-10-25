@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Crescent Moon & Star at top of Dome -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M54,23 A3.5,3.5 0 1,1 55.5,29.8 A4.5,4.5 0 1,0 54,23 Z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M54,29 L54,34"
+        android:strokeWidth="1.5"
+        android:strokeColor="#F59E0B" />
+    
+    <!-- Central Dome -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M54,34 C49,34 40,43 40,54 L68,54 C68,43 59,34 54,34 Z" />
+
+    <!-- Left Minaret -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M31,38 L33,33 L35,38 L34,38 L34,76 L32,76 L32,38 Z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M29,48 L37,48 L37,50 L29,50 Z" />
+
+    <!-- Right Minaret -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M73,38 L75,33 L77,38 L76,38 L76,76 L74,76 L74,38 Z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M71,48 L79,48 L79,50 L71,50 Z" />
+
+    <!-- Main Building Body -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M37,54 L71,54 L71,76 L37,76 Z" />
+
+    <!-- Arch Door Cutout (in deep green) -->
+    <path
+        android:fillColor="#0B3B2C"
+        android:pathData="M48,76 L48,64 C48,60.5 50.7,58 54,58 C57.3,58 60,60.5 60,64 L60,76 Z" />
+
+    <!-- Base steps -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M26,76 L82,76 L82,80 L26,80 Z" />
+</vector>

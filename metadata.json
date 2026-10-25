@@ -1,0 +1,6 @@
+{
+  "name": "Masjid Connect",
+  "description": "Aplikasi mobile admin Masjid Connect untuk mengelola operasional masjid: keuangan, agenda, jadwal sholat, notifikasi, user, dan digital signage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
